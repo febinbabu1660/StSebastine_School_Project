@@ -1,0 +1,42 @@
+
+<style>
+.chat-container {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.chat-message {
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.chat-message.sender {
+    background-color: #e6e6e6;
+    align-self: flex-end;
+}
+
+.chat-message.recipient {
+    background-color: #d1f2eb;
+    align-self: flex-start;
+}
+</style>
+
+<div class="chat-container">
+    <h1>Chat with {{ recipient.fname }} {{ recipient.lname }}</h1>
+    {% for message in messages %}
+        <div class="chat-message {% if message.sender == user %}sender{% else %}recipient{% endif %}">
+            <p>{{ message.message }}</p>
+        </div>
+    {% endfor %}
+    <hr>
+    <form method="POST" action="{% url 'send_message' recipient.id %}">
+        {% csrf_token %}
+        <input type="text" name="message">
+        <button type="submit">Send</button>
+    </form>
+</div>
+

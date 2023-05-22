@@ -1,0 +1,568 @@
+{% extends 'index/base_student.html' %}
+{% load static %}
+{% block content %}
+
+
+	<style>
+
+	.form-group {
+		
+	  margin-bottom: 1rem;
+	}
+	
+	label {
+	  display: block;
+	  margin-bottom: 0.5rem;
+	}
+	
+	select {
+
+	  display: block;
+	  width:300px;
+	  padding: 0.375rem 0.75rem;
+	  font-size: 1rem;
+	  font-weight: 400;
+	  line-height: 1.5;
+	  color: #495057;
+	  background-color: #fff;
+	  background-clip: padding-box;
+	  border: 1px solid #ced4da;
+	  border-radius: 0.25rem;
+	  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
+	
+	select:focus {
+	  outline: 0;
+	  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+	}
+	
+	button[type="submit"] {
+	  display: block;
+	  margin-top: 1rem;
+	  padding: 0.375rem 0.75rem;
+	  font-size: 1rem;
+	  font-weight: 400;
+	  line-height: 1.5;
+	  margin-left: 40%;
+	  color: #fff;
+	  background-color: #007bff;
+	  border: 1px solid #007bff;
+	  border-radius: 0.25rem;
+	  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
+	
+	button[type="submit"]:hover {
+	  color: #fff;
+	  background-color: #0069d9;
+	  border-color: #0062cc;
+	}
+	
+	button[type="submit"]:focus {
+	  outline: 0;
+	  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+	} 
+	
+	
+	</style>
+
+
+<script>
+
+
+	// for first drop down
+	function validate(){
+		var db_fundamentals=document.getElementById('df').value.trim();
+		var Architecture=document.getElementById('ca').value.trim();
+		var distributed_comp_fundamentals=document.getElementById('dcs').value.trim();
+		var cyber=document.getElementById('cs').value.trim();
+		var netwrking=document.getElementById('networking').value.trim();
+		var soft_developmnt=document.getElementById('sd').value.trim();
+		var prgmng_skls=document.getElementById('ps').value.trim();
+		var prjt_mngmnt=document.getElementById('pm').value.trim();
+		var cmpter_fornsic=document.getElementById('cff').value.trim();
+		var tchnicl_cmntn=document.getElementById('tc').value.trim();
+		var ai=document.getElementById('aiml').value.trim();
+		var sftwre=document.getElementById('se').value.trim();
+		var busns=document.getElementById('ba').value.trim();
+		var cmskils=document.getElementById('cskills').value.trim();
+		var dss=document.getElementById('ds').value.trim();
+		var trbl=document.getElementById('td').value.trim();
+		var gds=document.getElementById('gd').value.trim();
+		
+
+
+
+
+		 
+		if (db_fundamentals == "0"){
+			document.getElementById('first_error').style.display="block";
+			document.getElementById('first_error').innerHTML="Rate database fundamentals";
+			return false;
+		}else{
+			document.getElementById('first_error').style.display="none";
+		}
+
+
+		// for second drop down
+		if (Architecture == "0"){
+			document.getElementById('second_error').style.display="block";
+			document.getElementById('second_error').innerHTML="Rate computer architecture";
+			return false;
+		}else{
+			document.getElementById('second_error').style.display="none";
+		}
+
+		// for third drop down
+		if (distributed_comp_fundamentals == "0"){
+			document.getElementById('third_error').style.display="block";
+			document.getElementById('third_error').innerHTML="Rate Distributed Computing Systems";
+			return false;
+		}else{
+			document.getElementById('third_error').style.display="none";
+		}
+
+		// for four drop down
+		if (cyber == "0"){
+			document.getElementById('four_error').style.display="block";
+			document.getElementById('four_error').innerHTML="Rate Cyber Security";
+			return false;
+		}else{
+			document.getElementById('four_error').style.display="none";
+		}
+
+		// for five drop down
+		if (netwrking == "0"){
+			document.getElementById('five_error').style.display="block";
+			document.getElementById('five_error').innerHTML="Rate Networking";
+			return false;
+		}else{
+			document.getElementById('five_error').style.display="none";
+		}
+
+		// for six drop down
+		if (soft_developmnt == "0"){
+			document.getElementById('six_error').style.display="block";
+			document.getElementById('six_error').innerHTML="Rate Software Development";
+			return false;
+		}else{
+			document.getElementById('six_error').style.display="none";
+		}
+
+
+		// for seven drop down
+		if (prgmng_skls == "0"){
+			document.getElementById('seven_error').style.display="block";
+			document.getElementById('seven_error').innerHTML="Rate Programming Skills";
+			return false;
+		}else{
+			document.getElementById('seven_error').style.display="none";
+		}
+
+		
+		// for eight drop down
+		if (prjt_mngmnt == "0"){
+			document.getElementById('eight_error').style.display="block";
+			document.getElementById('eight_error').innerHTML="Rate Project Management";
+			return false;
+		}else{
+			document.getElementById('eight_error').style.display="none";
+		}
+
+
+		// for nine drop down
+		if (cmpter_fornsic == "0"){
+			document.getElementById('nine_error').style.display="block";
+			document.getElementById('nine_error').innerHTML="Rate Computer Forensics Fundamentals";
+			return false;
+		}else{
+			document.getElementById('nine_error').style.display="none";
+		}
+
+
+		// for ten drop down
+		if (tchnicl_cmntn == "0"){
+			document.getElementById('ten_error').style.display="block";
+			document.getElementById('ten_error').innerHTML="Rate Technical Communication";
+			return false;
+		}else{
+			document.getElementById('ten_error').style.display="none";
+		}
+
+
+
+		// for eleven drop down
+		if (ai == "0"){
+			document.getElementById('eleven_error').style.display="block";
+			document.getElementById('eleven_error').innerHTML="Rate AI ML";
+			return false;
+		}else{
+			document.getElementById('eleven_error').style.display="none";
+		}
+
+		// for twlve drop down
+		if (sftwre == "0"){
+			document.getElementById('twlve_error').style.display="block";
+			document.getElementById('twlve_error').innerHTML="Rate Software Engineering";
+			return false;
+		}else{
+			document.getElementById('twlve_error').style.display="none";
+		}
+
+		// for thirteen drop down
+		if (busns == "0"){
+			document.getElementById('thrten_error').style.display="block";
+			document.getElementById('thrten_error').innerHTML="Rate Business Analysis";
+			return false;
+		}else{
+			document.getElementById('thrten_error').style.display="none";
+		}
+
+		// for fourteen drop down
+		if (cmskils == "0"){
+			document.getElementById('forten_error').style.display="block";
+			document.getElementById('forten_error').innerHTML="Rate Communication skills";
+			return false;
+		}else{
+			document.getElementById('forten_error').style.display="none";
+		}
+
+
+		// for fifteen drop down
+		if (dss == "0"){
+			document.getElementById('fiften_error').style.display="block";
+			document.getElementById('fiften_error').innerHTML="Rate Data Science";
+			return false;
+		}else{
+			document.getElementById('fiften_error').style.display="none";
+		}
+
+
+
+		// for sixteen drop down
+		if (trbl == "0"){
+			document.getElementById('sixten_error').style.display="block";
+			document.getElementById('sixten_error').innerHTML="Rate Troubleshooting skills";
+			return false;
+		}else{
+			document.getElementById('sixten_error').style.display="none";
+		}
+
+
+		// for seventeen drop down
+		if (gds == "0"){
+			document.getElementById('svnten_error').style.display="block";
+			document.getElementById('svnten_error').innerHTML="Rate Graphics Designing";
+			return false;
+		}else{
+			document.getElementById('svnten_error').style.display="none";
+			return true;
+		}
+
+
+	}
+</script>
+
+	
+<div class="row">
+	<div class="col-xl-12  col-md-12 col-sm-12">
+	  <div class="justify-content-centre align-items-centre d-flex">
+		  	<div class="contact_form" style="margin-left: 20%;margin-top: 20px;margin-bottom:20px;border-radius:5px;">
+				
+				
+				{% if temp == 1 %}
+				<div id="message" >
+					<div style="text-align: center;">
+
+						<div style="display: inline-block;color:#fff;font-weight:bold;font-size:20px;"> Your predicted career is : </div>
+						<div style="display: inline-block;color: #fff;font: bold;font-size: 20px;">{{predicted_class}}</div>
+
+					</div>
+					<div style="color:#fff;">------------------------------------------------------------------------------------------------------------------------------------------</div>
+				</div>
+				{% else %}
+
+				<div></div>
+				{% endif %}
+
+				<h2 style="text-align: center; font-weight: bold; color: #fff;">RATE YOURSELF.....!!!</h2>
+
+
+						<form id="careerprediction" class="" action="{% url 'careerprediction' %}"  method="post" enctype="multipart/form-data" onsubmit="return validate()">
+						{% csrf_token %}
+							<div class="form-group" style="display: inline-block;">
+								<label for="df">Database Fundamentals:</label>
+								<select id="df" name="df" onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+								<option value="0">Select your rating</option>
+								<option value="Not Interested">Not Interested</option>
+								<option value="Poor">Poor</option>
+								<option value="Beginner">Beginner</option>
+								<option value="Average">Average</option>
+								<option value="Intermediate">Intermediate</option>
+								<option value="Excellent">Excellent</option>
+								<option value="Proffesional">Professional</option>
+								</select>
+								<span id="first_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="ca">Computer Architecture:</label>
+								<select id="ca" name="ca" onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="second_error" style="color:red;"></span>
+							</div>
+							
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="dcs">Distributed Computing Systems:</label>
+								<select id="dcs" name="dcs"onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="third_error" style="color:red;"></span>
+							</div>
+							<br>
+							<div class="form-group" style="display: inline-block;">
+								<label for="cs">Cyber Security:</label>
+								<select id="cs" name="cs" onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="four_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="networking">Networking:</label>
+								<select id="networking" name="networking"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="five_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="sd">Software Development:</label>
+								<select id="sd" name="sd"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="six_error" style="color:red;"></span>
+							</div>
+							<br>
+							<div class="form-group" style="display: inline-block;">
+								<label for="ps">Programming Skills:</label>
+								<select id="ps" name="ps"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="seven_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="pm">Project Management:</label>
+								<select id="pm" name="pm"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="eight_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="cff">Computer Forensics Fundamentals:</label>
+								<select id="cff" name="cff"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="nine_error" style="color:red;"></span>
+							</div>
+							<br>
+							<div class="form-group" style="display: inline-block;">
+								<label for="tc">Technical Communication:</label>
+								<select id="tc" name="tc"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="ten_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="aiml">AI ML:</label>
+								<select id="aiml" name="aiml"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="eleven_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="se">Software Engineering:</label>
+								<select id="se" name="se"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="twlve_error" style="color:red;"></span>
+							</div>
+							<br>
+							<div class="form-group" style="display: inline-block;">
+								<label for="ba">Business Analysis:</label>
+								<select id="ba" name="ba"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="thrten_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="cskills">Communication skills:</label>
+								<select id="cskills" name="cskills"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="forten_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group"style="display: inline-block;">
+								<label for="ds">Data Science:</label>
+								<select id="ds" name="ds"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="fiften_error" style="color:red;"></span>
+							</div>
+							<br>
+							<div class="form-group" style="display: inline-block;">
+								<label for="td">Troubleshooting skills:</label>
+								<select id="td" name="td"  onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="sixten_error" style="color:red;"></span>
+							</div>
+							
+							<div class="form-group" style="display: inline-block;">
+								<label for="gd">Graphics Designing:</label>
+								<select id="gd" name="gd" onchange="return validate()" onkeyup="return validate()" onblur="return validate()">
+									<option value="0">Select your rating</option>
+									<option value="Not Interested">Not Interested</option>
+									<option value="Poor">Poor</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Average">Average</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Excellent">Excellent</option>
+									<option value="Proffesional">Professional</option>
+								</select>
+								<span id="svnten_error" style="color:red;"></span>
+
+							</div>
+							
+							
+							
+							
+							<button type="submit">Submit</button>
+						</form>
+
+						
+					</div>
+				</div>
+			  </div><!-- end col -->
+		  </div><!-- end row -->
+	  </div><!-- end container -->
+  </div><!-- end section -->
+</div>
+	
+	
+
+    
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'index/base_teacher.html' %}
+{% load static %}
+{% block content %}
+
+
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1>Set Assignment<span class="m_1"></span></h1>
+		</div>
+	</div>
+
+    <style>
+
+        .containerassgnmt {
+                  max-width: 600px;
+                  margin: 0 auto;
+                  padding: 20px;
+                  background-color: #fff;
+                  border-radius: 8px;
+                  box-shadow: 0 0 10px #0047b3;
+                  font-family: Arial, sans-serif;
+                }
+        
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        label {
+          margin-top: 10px;
+        }
+        
+        input, button {
+          margin-bottom: 10px;
+          padding: 5px;
+          border: 1px solid gray;
+          border-radius: 3px;
+          font-size: 16px;
+        }
+        
+        input[type="date"], input[type="file"] {
+          width: 100%;
+        }
+        
+        button[type="submit"] {
+          background-color: #4CAF50;
+          color: white;
+          cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+          background-color: #2E8B57;
+        }
+        
+        </style>
+
+  <script>
+    var courseSelect = document.getElementById("course");
+  var courseId = courseSelect.options[courseSelect.selectedIndex].value;
+  </script>
+
+
+
+        <div class="containerassgnmt">
+        <form method="POST" action="{% url 'Assignment' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label for="course">Select a course:</label>
+          <select style="width: 100%; height: 40px;" id="course" name="Course_name">
+            {% for i in course %}
+            <option value="{{ i.course_id }}">{{ i.Course_name }}</option>
+            {% endfor %}
+          </select>
+
+          <label for="subject">Select your subject:</label>
+          <select style="width: 100%; height: 40px;" id="subject" name="subject_name">
+            {% for i in subject %}
+            <option value="{{ i.subject_id }}">{{ i.subject_name }}</option>
+            {% endfor %}
+          </select>
+
+          <label for="assignment-topic">Assignment Topic:</label>
+          <input type="text" id="assignment-topic" name="topic" style="width: 100%; height: 40px;" required>
+          
+          <label for="start-date">Start Date:</label>
+          <input type="date" id="start-date" name="start_date" required>
+          
+          <label for="end-date">End Date:</label>
+          <input type="date" id="end-date" name="submission_date" required>
+          
+          <label for="pdf-file">PDF File:</label>
+          <input type="file" id="pdf-file" name="qpaper" accept=".pdf">
+          
+          <button type="submit" id="submittt">Submit</button>
+        </form>
+        </div>
+
+{% endblock %}

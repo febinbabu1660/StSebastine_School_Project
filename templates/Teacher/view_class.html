@@ -1,0 +1,83 @@
+{% extends 'index/base_teacher.html' %}
+{% load static %}
+{% block content %}
+
+
+
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1>View The Class<span class="m_1"></span></h1>
+		</div>
+	</div>
+
+    <div class="row">
+                <div class="col-xl-12  col-md-12 col-sm-12">
+                  <div class="justify-content-centre align-items-centre d-flex">
+                      <div class="contact_form1">
+                        <div id="message"></div>
+                        <form id="leaveApply" class="" action=""  method="post" name="leaveApply">
+                            {% csrf_token %}
+                            <div class="row row-fluid" >
+                              {% if student %}
+                              <center>
+                                        <table class="table table-hover" style="margin-left:300px;">
+                                          
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Year of join</th>
+                                                    <!-- <th scope="col">Attendance Marks</th>
+                                                    <th scope="col">Percentage</th>
+                                                    <th scope="col">Percentage Prediction</th> -->
+                                                 
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for d in student %}
+                                                <tr>
+                                                    <td>{{d.email}}</td>
+                                                    <td>{{d.fname}} {{d.lname}}</td>
+                                                    <td>{{d.year_of_join}}</td>
+                                                </tr>
+
+                                                {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                      </center>
+                                        {% else %}
+                                        <h4>Currently No Results</h4>
+                                        {% endif %}
+                            </div>
+                        </form>
+                        <style>.download-btn {
+                            background-color: #4CAF50; /* Set the background color of the button */
+                            color: white; /* Set the text color of the button */
+                            padding: 10px 20px 10px 20px; /* Set the padding of the button */
+                            border: none; /* Remove the border of the button */
+                            border-radius: 4px; /* Add rounded corners to the button */
+                            text-align: center; /* Center the text inside the button */
+                            display: inline-block; /* Set the button to be an inline-block element */
+                            font-size: 16px; /* Set the font size of the button */
+                            cursor: pointer; /* Add a cursor pointer to the button */
+                            text-decoration: none; /* Remove underline from link */
+                            align-content: center;
+                          }
+                          
+                          .download-btn:hover {
+                            background-color: #3e8e41; /* Change the background color of the button when hovered */
+                          
+                          }
+                          </style>
+                        <a href="{% url 'download_data' %}" download>
+                            <button class="download-btn">Download Data</button>
+                          </a>
+                    </div>
+                  </div>
+                </div><!-- end col -->
+    </div>
+
+
+
+{% endblock %}

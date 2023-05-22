@@ -1,0 +1,58 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<html>
+    
+<head>
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            align-content: center;
+            display: inline-block;
+            border: 1px solid #1a1111;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 50%;
+            background-color: #4CAF50;
+            color: rgb(15, 10, 10);
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            align-content: center;
+            background-color: #a71b1b;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div><center>
+        <form action="." method="POST" enctype="multipart/form-data">
+            <h2>St.Sebastine's Higher Secondary School Add Student And Teachers</h2>
+            
+            {{ form.as_p }}
+            {% csrf_token %}
+            
+            <!-- <label for="upload">Upload your file here</label> -->
+            <input type="submit" value="Upload">
+        </form>
+    </center>
+    </div>
+</body>
+</html>
+{% endblock %}

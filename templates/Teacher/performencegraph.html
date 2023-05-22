@@ -1,0 +1,11 @@
+    
+    {% extends 'index/base_teacher.html' %}
+    {% load static %}
+    {% block content %}
+    
+    
+    <div>
+    <img src="data:image/png;base64,{{ plot_data }}" alt="Marks Plot" style="width:800px;">
+  </div>
+
+{% endblock %}

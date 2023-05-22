@@ -1,0 +1,39 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<html>
+    
+<head>
+    <style>
+      table {
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+td {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+td.accuracy-value {
+  color: green;
+}
+
+    </style>
+</head>
+
+<body>
+    <div><center>
+        <table>
+            <tr>
+              <td>Accuracy:</td>
+              <td class="accuracy-value">0.85</td>
+            </tr>
+          </table>
+          
+    </center>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,401 @@
+{% load static %}
+{% block content %}
+<html>
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Site Metas -->
+    <title>St.Sebastine's HSS </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap-touch-slider.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/colors.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/pr_loading.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/timeline.min.css' %}">
+
+    <!-- Modernizer for Portfolio -->
+    <script src="{% static 'js/modernizer.js' %}"></script>
+
+	<script src="{% static 'js/all.js' %}"></script>
+
+    <script src="{% static 'js/01-custom-places-example.js' %}"></script>
+
+    <script src="{% static 'js/mapsed.js' %}"></script>
+
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <script src="{% static 'js/timeline.min.js' %}"></script>
+
+<!--    &lt;!&ndash;[if lt IE 9]>-->
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script class="jsbin" src="http:ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">  </script>
+
+<!--    <![endif]&ndash;&gt;-->
+
+</head>
+
+<body class="host_version">
+
+
+   
+
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">
+					<img src="{% static 'images/logo.png' %}" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-host">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'courses' %}">Courses</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'Teacher' %}">Teachers</a></li>
+                        <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Leave</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="{% url 'teacherleave' %}">Apply Leave </a>
+								<a class="dropdown-item" href="{% url 'teacherleaveView' %}">Leave Status </a>
+								<!-- <a class="dropdown-item" href="{% url 'Studentdetails' %}">Upload details </a> -->
+							</div>
+						</li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+
+                        
+					</ul>
+                    
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="all-title-box">
+    <div class="container text-center">
+        <h1>Leave<span class="m_1"></span></h1>
+    </div>
+</div>
+
+<div id="contact" class="section wb">
+    <div class="container">
+       
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <style>
+            .aa{
+                height: 40px;
+                border-radius:5px;
+                color:red;
+                border-color: #000;
+                text-align: center;
+            }
+            .bb{
+                height: 40px;
+                border-radius:5px;
+            }
+        
+          .ui-datepicker-header {
+              
+              color: rgb(24, 22, 22);
+              
+            }
+        
+            .ui-datepicker-prev, .ui-datepicker-next {
+          background-color: #0074d9;
+          color: white;
+          padding: 0.2em 0.5em;
+          border-radius: 4px;
+          font-size: 18px;
+          line-height: 1;
+          
+        }
+        
+        .ui-datepicker-prev::before {
+          content: "<<";
+          margin-right: 5px;
+        }
+        
+        .ui-datepicker-next::before {
+          content: ">>";
+          margin-left: 5px;
+        }
+        
+            .ui-datepicker-prev, .ui-datepicker-next {
+              background-color: #0074d9;
+              color: white;
+              padding: 0.2em 0.5em;
+              border-radius: 4px;
+            }
+        
+            .ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+              background-color: #003d5c;
+              cursor: pointer;
+            }
+          
+        
+            .ui-datepicker-calendar td a {
+              color: #ea1717;
+            }
+        
+            .ui-datepicker-calendar td a:hover {
+              background-color: #340ba3;
+            }
+        
+            .ui-datepicker-current-day {
+              background-color: #813df5;
+              color: #fff;
+            }
+        
+            .ui-datepicker-unselectable {
+              color: #bbb;
+            }
+        
+            ul {
+              list-style: none;
+              padding-left: 0;
+            
+        
+            }
+            .calender{
+                width: 400px;
+            }
+            .division{
+                width: 180px;
+                height: 40px;
+                border-radius:5px;
+            }
+        
+        </style>
+ 
+        <script>
+            $(function () {
+                var selectedDates = [];
+                // Initialize the datepicker
+                
+                $("#calendar").datepicker({
+                    onSelect: function (date) {
+                        // Check if the date has already been selected
+                        if (selectedDates.includes(date)) {
+                            alert("You have already selected this date.");
+                        } else {
+                            // Add the selected date to the list of selected dates
+                            selectedDates.push(date);
+                            // Create an input field for the selected date and append it to the selected-dates div
+                            $("#selected-dates").append("<input class='aa' type='text' name='apply_date' value='" + date + "' format='YYYY-MM-DD' readonly>  <select class='division' type='text' name='session_"+ date +"' > <option>Select leave session</option><option>FN</option><option>AN</option><option>FD</option></select>     <select class='division' type='text'  name='type_"+ date +"'> <option>Select leave type</option><option>Casual</option><option>Medical</option></select>  <input class='bb' type='text'  name='reason_"+ date +"' placeholder='Reason' onclick='return enable()'>  <br><br>");
+                        }
+                    }
+                });
+            });
+        
+        
+            function enable(){
+                document.getElementById('btn').style.display="block";
+            }
+        </script>
+
+        <div class="row">
+            <div class="col-xl-6 col-md-12 col-sm-12">
+                <div class="contact_form">
+                    <div id="message"></div>
+                        <div class="row row-fluid" >
+                            
+
+                             <div style="margin-left:25%;" id="calendar"></div>
+
+                        </div>
+                </div>
+            </div><!-- end col -->
+            <div class="col-xl-6 col-md-12 col-sm-12">
+                
+                <div class="contact_form" style="width: 860px;">
+                    <div id="message"></div>
+                        <div class="row row-fluid" style="margin-left: 5%;width: 800px;">
+                            <div  >
+                                <label for="selected-dates"
+                                  style="background-color:rgb(113, 149, 247);width:410px;text-align:center;color:#fff;font-weight:bold;height:30px;margin-left: 170px;">Selected
+                                  dates</label>
+                                <form action="{% url 'teacherleave' %}" method="post" >
+                                  {% csrf_token %}
+                            
+                                  <div id="selected-dates"></div>
+                
+                                  <div class="col-12">
+                                    <button type="submit" id="btn" class="btn btn-success" style="display:none;">Apply</button>
+                                  </div>
+                            
+                                </form>
+                            
+                              </div>
+                        </div>
+                </div>
+
+
+
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer" style="margin-top: 350px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>About US</h3>
+                    </div>
+                    <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
+                    <div class="footer-right">
+                        <ul class="footer-links-soi">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul><!-- end links -->
+                    </div>
+                </div><!-- end clearfix -->
+            </div><!-- end col -->
+
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>Information Link</h3>
+                    </div>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul><!-- end links -->
+                </div><!-- end clearfix -->
+            </div><!-- end col -->
+            
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>Contact Details</h3>
+                    </div>
+
+                    <ul class="footer-links">
+                        <li><a href="mailto:#">info@yoursite.com</a></li>
+                        <li><a href="#">www.yoursite.com</a></li>
+                        <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
+                        <li>+61 3 8376 6284</li>
+                    </ul><!-- end links -->
+                </div><!-- end clearfix -->
+            </div><!-- end col -->
+            
+        </div><!-- end row -->
+    </div><!-- end container -->
+</footer><!-- end footer -->
+
+<div class="copyrights">
+    <div class="container">
+        <div class="footer-distributed">
+            <div class="footer-center">                   
+                <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">SmartEDU</a> Design By : <a href="https://html.design/">html design</a></p>
+            </div>
+        </div>
+    </div><!-- end container -->
+</div><!-- end copyrights -->
+
+<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+<!-- ALL JS FILES -->
+<script src="{% static 'https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCKjLTXdq6Db3Xit_pW_GK4EXuPRtnod4o' %}"></script>
+<!-- Mapsed JavaScript -->
+<script src="{% static 'js/mapsed.js' %}"></script>
+<script src="{% static 'js/01-custom-places-example.js' %}"></script>
+<!-- ALL PLUGINS -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'index/base_teacher.html' %}
+{% load static %}
+{% block content %}
+
+
+
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1>Result upload<span class="m_1"></span></h1>
+		</div>
+	</div>
+
+    <div class="row">
+                <div class="col-xl-12  col-md-12 col-sm-12">
+                  <div class="justify-content-centre align-items-centre d-flex">
+                      <div class="contact_form1">
+                        <div id="message"></div>
+                        <form id="prediction" class="" action=""  method="post" name="prediction">
+                            {% csrf_token %}
+                            <div class="row row-fluid">
+                              {% if data %}
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Onam Exam</th>
+                                                    <th scope="col">X max exam</th>
+                                                    <th scope="col">Percentage</th>
+                                                    <!-- <th scope="col">Percentage Prediction</th> -->
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Action</th>
+                                                 
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for d in data %}
+                                                <tr>
+                                                    <td>{{d.email}}</td>
+                                                    <td>{{d.onam_exam_marks}}</td>
+                                                    <td>{{d.xmas_exam_marks}}</td>
+                                                    <td>{{d.pass_percentage}}</td>
+                                                    <!-- <td>{{d.pass_percentage_pred}}</td> -->
+                                                    {% if d.pass_percentage_pred >= 90 %}
+                                                    <td style="color:green;font-weight:bold;">Outstanding</td>
+                                                    {% elif d.pass_percentage_pred < 90 and d.pass_percentage_pred >= 70  %}
+                                                    <td style="color:green;font-weight:bold;">Excellent</td>
+                                                    {% elif d.pass_percentage_pred < 70 and d.pass_percentage_pred >= 60  %}
+                                                    <td style="color:green;font-weight:bold;">Very Good</td>
+                                                    {% elif d.pass_percentage_pred < 60 and d.pass_percentage_pred >= 50  %}
+                                                    <td style="color:green;font-weight:bold;">Good</td>
+                                                    {% else %}
+                                                    <td style="color:red;font-weight:bold;">Failed</td>
+                                                    {% endif %}
+                                                    <td><a href="{% url 'plot_graphs' d.id %}">View Graph</a></td>
+                                                </tr>
+
+                                                {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                        {% else %}
+                                        <h4>Currently No Results</h4>
+                                        {% endif %}
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                </div><!-- end col -->
+    </div>
+    <!-- <p>Accuracy:{{mean_squared_error}}</p> -->
+
+
+{% endblock %}

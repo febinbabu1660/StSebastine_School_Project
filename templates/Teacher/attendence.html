@@ -1,0 +1,109 @@
+{% extends 'index/base_teacher.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="all-title-box">
+    <div class="container text-center">
+        <h1>Attendance<span class="m_1"></span></h1>
+    </div>
+</div>
+
+<style>
+    .attendance-table {
+      font-family: Arial, sans-serif;
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      align-content: center;
+    }
+    
+    .attendance-table th, .attendance-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    .attendance-table th {
+      text-align: left;
+      background-color: #f2f2f2;
+    }
+    
+    .attendance-table input[type=checkbox] {
+      margin: 0;
+    }
+    
+    </style>
+<center>
+    <div class="attendance-table">
+        <form id="attendace" class="" action=""  method="post" name="attendance">
+            {% csrf_token %}
+            <div class="row row-fluid">
+              {% if data %}
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Present</th>
+                                    <th scope="col">Abscent</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for d in data %}
+                                <tr>
+                                    <td>{{d.email}}</td>
+                                    <td>{{d.fname}}</td>
+                                    <!-- <td>{{d.xmas_exam_marks}}</td>
+                                    <td>{{d.assignment_marks}}</td>
+                                    <td>{{d.attendance_mark}}</td>
+                                    <td>{{d.pass_percentage}}</td>
+                                    <td>{{d.pass_percentage_pred}}</td>
+                                    <td><a href="{% url 'plot_graphs' d.id %}">View Graph</a></td> -->
+                                </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <h4>Currently No Results Available</h4>
+                        {% endif %}
+            </div>
+        </form>
+      <!-- <table>
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Roll No.</th>
+            <th>Present</th>
+            <th>Absent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>101</td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>102</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox" checked></td>
+          </tr>
+          <tr>
+            <td>Bob Johnson</td>
+            <td>103</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </tbody>
+      </table> -->
+    </div>
+</center>
+
+
+
+{% endblock %}

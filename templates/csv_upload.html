@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+{%  load static %}
+{%  block content %}
+
+<div>
+    <form action="." method="POST" enctype="multipart/form-data">
+        <input type="file" name="csv_upload"><br><br>
+        {% csrf_token %}
+        <button type="submit">Upload File</button>
+
+    </form>
+</div>
+
+
+{% endblock %}

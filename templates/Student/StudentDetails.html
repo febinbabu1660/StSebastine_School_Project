@@ -1,0 +1,405 @@
+{% extends 'index/base_student.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1>Student Info<span class="m_1">Complete details of the Student.</span></h1>
+		</div>
+	</div>
+	
+    <div id="contact" class="section wb">
+        <div class="container">
+            <div class="section-title text-center">
+                <!-- <h3>Need Help? Sure we are Online!</h3> -->
+<!-- <p class="lead">Let us give you more details about the special offer website you want us. Please fill out the form below. <br>We have million of website owners who happy to work with us!</p> -->
+            </div><!-- end title -->
+                                <script>
+                                function favCourse() {
+                                var stream = document.getElementById("Stream");
+                                document.getElementById("favourite").value = stream.options[mylist.selectedIndex].text;
+                                }
+                                </script>
+
+                                <script>
+                                function favsCourse() {
+                                var Slanguage = document.getElementById("slanguage");
+                                document.getElementById("favourite").value = stream.options[mylist.selectedIndex].text;
+                                }
+                                </script>
+
+           <script>
+             function validate()
+                {
+					var f=document.getElementById("fname").value;
+					var l=document.getElementById("lname").value;
+					var s=/^[a-zA-Z]+$/;
+					if(f=="")
+                {
+                    document.getElementById('fn').style.display = "block";
+
+                    document.getElementById('fn').innerHTML="**Please Enter  First Name";
+                    return false;
+                }
+					if(f!="" && s.test(f)==false){
+
+						document.getElementById('fn').style.display = "block";
+						document.getElementById('fn').innerHTML = "Invalid Fname";
+						return false;
+					}
+					else{
+						document.getElementById('fn').style.display = "none";
+					}
+					if(l=="")
+                {
+                    document.getElementById('ln').style.display = "block";
+
+                    document.getElementById('ln').innerHTML="**Please Enter  Last Name";
+                    return false;
+                }
+					if(l!="" && s.test(l)==false){
+
+						document.getElementById('ln').style.display = "block";
+						document.getElementById('ln').innerHTML = "Invalid Lname";
+						return false;
+					}
+					else{
+						document.getElementById('ln').style.display = "none";
+					}
+
+					var h=document.getElementById("hname").value;
+					var s=/^[a-zA-Z]+$/;
+					if(h=="")
+                {
+                    document.getElementById('hn').style.display = "block";
+
+                    document.getElementById('hn').innerHTML="**Please Enter  House Name";
+                    return false;
+                }
+					if(h!="" && s.test(h)==false){
+
+						document.getElementById('hn').style.display = "block";
+						document.getElementById('hn').innerHTML = "Invalid House name";
+						return false;
+					}
+					else{
+						document.getElementById('hn').style.display = "none";
+					}
+
+					var F=document.getElementById("father").value;
+					var s=/^[a-zA-Z]+$/;
+					if(F=="")
+                {
+                    document.getElementById('ft').style.display = "block";
+
+                    document.getElementById('ft').innerHTML="**Please Enter  father's Name";
+                    return false;
+                }
+					if(F!="" && s.test(F)==false){
+
+						document.getElementById('ft').style.display = "block";
+						document.getElementById('ft').innerHTML = "Invalid Father name";
+						return false;
+					}
+					else{
+						document.getElementById('ft').style.display = "none";
+					}
+
+					var O=document.getElementById("occupation").value;
+					var s=/^[a-zA-Z]+$/;
+					if(O=="")
+                {
+                    document.getElementById('oc').style.display = "block";
+
+                    document.getElementById('oc').innerHTML="**Please Enter  father's occupation";
+                    return false;
+                }
+					if(O!="" && s.test(O)==false){
+
+						document.getElementById('oc').style.display = "block";
+						document.getElementById('oc').innerHTML = "Invalid Father Occupation";
+						return false;
+					}
+					else{
+						document.getElementById('oc').style.display = "none";
+					}
+
+					var ph = document.getElementById("pmobile").value;
+					var expr = /^[6-9]\d{9}$/;
+					if(ph=="")
+                {
+                    document.getElementById('pmb').style.display = "block";
+
+                    document.getElementById('pmb').innerHTML="**Please Enter  Phone number";
+                    return false;
+                }
+					if(ph!="" && expr.test(ph)==false){
+						document.getElementById('pmb').style.display = "block";
+						document.getElementById('pmb').innerHTML = "Invalid Phone number";
+						return false;
+								}
+								else{
+						document.getElementById('pmb').style.display = "none";
+					}
+
+
+                    var age=document.getElementById("dob").value;
+                     if(age == "")
+                     {
+                       document.getElementById('dob').placeholder="** please fill the field";
+                         document.getElementById('dob').style.border="1px solid red";
+                         document.getElementById('dob').focus();
+                         return false;
+                     }
+                       else if (!isDobValid(age))
+                     {
+                         alert("You must be 18 years old to register");
+                         document.getElementById('dob').style.border = "1px solid red";
+                         document.getElementById("dob").style.color = "red";
+                         return false;
+                     }
+
+
+
+
+					var C=document.getElementById("Caste").value;
+					var s=/^[a-zA-Z]+$/;
+					if(C=="")
+                {
+                    document.getElementById('cr').style.display = "block";
+
+                    document.getElementById('cr').innerHTML="**Please Enter  father's occupation";
+                    return false;
+                }
+					if(C!="" && s.test(C)==false){
+
+						document.getElementById('cr').style.display = "block";
+						document.getElementById('cr').innerHTML = "Invalid Father Occupation";
+						return false;
+					}
+					else{
+						document.getElementById('cr').style.display = "none";
+					}
+
+                    var P=document.getElementById("pschool").value;
+					var s=/^[a-zA-Z]+$/;
+					if(P=="")
+                {
+                    document.getElementById('ps').style.display = "block";
+
+                    document.getElementById('ps').innerHTML="**Please Enter  father's occupation";
+                    return false;
+                }
+					if(P!="" && s.test(P)==false){
+
+						document.getElementById('ps').style.display = "block";
+						document.getElementById('ps').innerHTML = "Invalid Father Occupation";
+						return false;
+					}
+					else{
+						document.getElementById('ps').style.display = "none";
+					}
+
+                    var GN=document.getElementById("gname").value;
+					var s=/^[a-zA-Z]+$/;
+					if(GN=="")
+                {
+                    document.getElementById('gn').style.display = "block";
+
+                    document.getElementById('gn').innerHTML="**Please Enter  Guardian Name";
+                    return false;
+                }
+					if(GN!="" && s.test(GN)==false){
+
+						document.getElementById('gn').style.display = "block";
+						document.getElementById('gn').innerHTML = "Invalid Guardian Name";
+						return false;
+					}
+					else{
+						document.getElementById('gn').style.display = "none";
+					}
+
+                    var gph = document.getElementById("gmobile").value;
+					var expr = /^[6-9]\d{9}$/;
+					if(gph=="")
+                {
+                    document.getElementById('gmb').style.display = "block";
+
+                    document.getElementById('gmb').innerHTML="**Please Enter  Phone number";
+                    return false;
+                }
+					if(gph!="" && expr.test(gph)==false)
+                    {
+						document.getElementById('gmb').style.display = "block";
+						document.getElementById('gmb').innerHTML = "Invalid Phone number";
+						return false;
+					}
+								else
+                                {
+						document.getElementById('gmb').style.display = "none";
+					        }
+                    
+                        
+                    
+            }
+
+         </script>
+
+
+            <script>
+                   const isDobValid = (dob) => {
+            // check age greater than 18
+            var today = new Date();
+            var birthDate = new Date(age);
+            var agee = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                agee--;
+            }
+            if (agee < 18) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+          </script>
+
+
+            <div class="row">
+                <div class="col-xl-12  col-md-12 col-sm-12">
+                  <div class="justify-content-centre align-items-centre d-flex">
+                      <div class="contact_form">
+                        <div id="message"></div>
+                        <form id="Studentdetails" class="" action="{% url 'Studentdetails' %}"  method="post" name="Studentdetails" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row row-fluid">
+                                <div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>First Name </b> </label>
+                                    <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="fn" style="color: rgb(255, 39, 39);"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Last Name </b> </label>
+                                    <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="ln" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>House Name </b> </label>
+                                    <input type="text" name="hname" id="hname" class="form-control" placeholder="House Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="hn" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Father's Name </b> </label>
+                                    <input type="text" name="father" id="father" class="form-control" placeholder="Father Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="ft" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Father's Occupation </b> </label>
+                                    <input type="text" name="occupation" id="occupation" class="form-control" placeholder=" Father's Occupation" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="oc" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Parents Mobile number </b> </label>
+                                    <input type="text" name="pmobile" id="pmobile" class="form-control" placeholder="Parent's Mobile " onblur="return validate()" onKeyUp="return validate()" minlength="10" maxlength="10">
+                                    <span id="pmb" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Date of Birth </b> </label>
+                                    <input type="date" name="dob" id="dob" class="form-control" placeholder="Date of Birth" required onblur="return validate()" onkeyup="return validate()">
+                                    <span class="error" id="lblError"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Religion </b> </label>
+                                    <input type="text" name="religion" id="religion" class="form-control" placeholder="Religion" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="cr" style="color: red;"></span>
+                                </div>
+
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Previous School </b> </label>
+                                    <input type="text" name="pschool" id="pschool" class="form-control" placeholder="Previous School" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="ps" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>SSLC Percentage </b> </label>
+                                    <input type="number" name="markobtained" id="markobtained" class="form-control" placeholder="SSLC Percentage" required >
+                                </div>
+
+								<!-- <div class="col-lg-6 col-md-6 col-sm-6 mt-4" style="font-size: 20px;">
+                                    <label><b>Course </b> </label>
+                                    <select name="Course_name" style="height:55px; width:100%; border-radius:5px; text-align:center; color:#C1BCBC; text-size:25px;" id = "Course_name" onchange = "favCourse()" required >
+                                        <option> Choose Your Course </option>
+                                  {% for i in stream %}
+
+                                   <option value="{{i.Course_name}}">{{i.Course_name}} </option>
+                                  {% endfor %}
+
+                                   </select>
+                               <input type="text" name="Stream" id="Stream" class="form-control" placeholder="Course">-->
+                                <!-- </div> --> 
+
+                                
+
+								<!-- <div class="col-lg-6 col-md-6 col-sm-6 mt-4" style="font-size: 20px;">
+									<label><b>Second language </b> </label>
+                                     <select name="slanguage" style="height:55px; width:100%; border-radius:5px; text-align:center; color:#C1BCBC; text-size:25px;" id = "slanguage" onchange = "favsCourse()" required >
+                                    <option> Choose Second lanaguage </option>
+                                    <option value="Malayalam"> Malayalam </option>
+                                    <option value="Hindi"> Hindi </option>
+
+                                    </select>
+                                    <input type="text" name="slanguage" id="slanguage" class="form-control" placeholder="Second language">-->
+                                <!-- </div> -->
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px; margin-top: 15px;" >
+									<label><b>Gender </b> </label><br>
+                                    <input type="radio" name="gender" id="gender" value="male" required>&nbsp;Male
+									<input type="radio" name="gender" id="gender" value="female" required>&nbsp;Female
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6 mt-5" style="font-size: 20px;" >
+									<label><b>Guardian's Name </b> </label>
+                                    <input type="text" name="gname" id="gname" class="form-control" placeholder="Guardian's Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="gn" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Guardian's Phone number </b> </label>
+                                    <input type="text" name="gmobile" id="gmobile" class="form-control" placeholder="Guardian's Phone number" onblur="return validate()" onKeyUp="return validate() " minlength="10" maxlength="10">
+                                    <span id="gmb" style="color: red;"></span>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Guardian's email </b> </label>
+                                    <input type="email" name="gemail" id="gemail" class="form-control" placeholder="Guardian's email" >
+                                    <span id="geml" style="color: red;"></span>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Upload your profile picture </b> </label>
+                                    <input type="file" name="profile_pic" id="profile_pic" class="form-control"   required >
+                                </div>
+
+                            </div>
+                            <div>
+                                <div class="text-center pd">
+                                    <input type="submit" value="UPLOAD" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+	
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'index/base_student.html' %}
+{% load static %}
+{% block content %}
+
+
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1>Course Materials<span class="m_1"></span></h1>
+		</div>
+	</div>
+	
+    <div id="contact" class="section wb">
+        <div class="container">
+            <!-- <div class="section-title text-center"> -->
+                <!-- <h3>Need Help? Sure we are Online!</h3> -->
+<!-- <p class="lead">Let us give you more details about the special offer website you want us. Please fill out the form below. <br>We have million of website owners who happy to work with us!</p> -->
+            <!-- </div>end title -->
+
+
+
+<!--             <script>-->
+<!--                                function leaveapply() {-->
+<!--                                var session = document.getElementById("session");-->
+<!--                                document.getElementById("favourite").value = session.options[mylist.selectedIndex].text;-->
+<!--                                }-->
+<!--                                </script>-->
+
+
+
+            <div class="row">
+                <div class="col-xl-12  col-md-12 col-sm-12">
+                  <div class="justify-content-centre align-items-centre d-flex">
+                      <div class="contact_form1">
+                        <div id="message"></div>
+                        <!-- <form>
+                            {% csrf_token %} -->
+                            <div class="row row-fluid">
+                              {% if data %}
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Subject Name </th>
+                                                    <th scope="col">Note</th>
+                                                    <th scope="col">Upload Date</th>
+                                                    <th scope="col">Course Material</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for d in data %}
+                                                <tr>
+                                                    <td>{{d.subject_name}}</td>
+                                                    <td>{{d.Note}}</td>
+                                                    <td>{{d.upload_date}}</td>
+                                                     <td ><a class="btn btn-success"  href="{% url 'download_pdf_CM' d.id %}">Download</a></td>
+                                                </tr>
+
+                                                {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                        {% else %}
+                                        <h4>Currently You have no Course Materials Avialable</h4>
+                                        {% endif %}
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                  </div>
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+	
+	<div class="parallax section dbcolor">
+        <div class="container">
+            <div class="row logos">
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_01.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_02.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_03.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_04.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_05.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_06.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+{% endblock %}
